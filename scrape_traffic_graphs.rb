@@ -24,9 +24,9 @@ ARGV.each do |login|
     f.write(%Q{<a href="mailto:#{user_data['email']}">#{user_data['email']}</a><br />\n}) if user_data['email']
 
     repositories = [user_data['repositories']].flatten.compact
-    repositories.each do |repository|
+    repositories.each_with_index do |repository, index|
       project = repository['name']
-      puts "  fetching #{project}..."
+      puts "  [#{index + 1}/#{repositories.size}] fetching #{project}..."
       page_data = HTTParty.get("http://github.com/#{login}/#{project}/graphs/traffic")
       page = Hpricot.parse(page_data)
       traffic_graph_img = (page / 'img[@alt="Google Chart"]').first
