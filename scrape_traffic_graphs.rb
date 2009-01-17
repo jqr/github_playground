@@ -32,7 +32,7 @@ ARGV.each do |login|
       traffic_graph_img = (page / 'img[@alt="Google Chart"]').first
       f.write(%Q{<h2><a href="#{repository['url']}">#{project}</a></h2>\n})
       f.write("#{repository['watchers']} watchers, #{repository['forks']} forks<br />\n")
-      f.write("<p>#{repository['description']}</p>") if repository['description'].size > 0
+      f.write("<p>#{repository['description']}</p>") if repository['description']
       f.write(traffic_graph_img.to_s + "\n")
     end
     f.write("</body>")
