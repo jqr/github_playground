@@ -10,14 +10,14 @@ require 'httparty'
 require 'hpricot'
 
 ARGV.each do |login|
-
   puts "fetching #{login}'s projects"
 
   user_data = HTTParty.get("http://github.com/api/v1/json/#{login}")['user']
   output_filename = File.join(File.dirname(__FILE__), 'tmp', "#{login}.html")
 
   File.open(output_filename, 'w') do |f|
-    user_data['repositories'].each do |repository|
+    repositories = [user_data['repositories']].flatten.compact
+    repositories.each do |repository|
       project = repository['name']
       puts "  fetching #{project}..."
       page_data = HTTParty.get("http://github.com/#{login}/#{project}/graphs/traffic")
