@@ -1,3 +1,37 @@
 = Github Playground
 
 The beginnings of projects related to Github.
+
+
+== scrape_traffic_graphs
+
+Pulls repository traffic graph data for users and arranges all of their
+projects in one view, along with some other basic repository stats.
+
+
+== gem_stats
+
+Summarizes the public gem list of current gem versions
+
+  Gem Stats:
+   * Total: 3675
+   * Unique: 2790
+  User Stats:
+   * Total: 1684
+   * Average # of gems: 2.18230403800475
+   * Most # of gems: 35
+        bahuvrihi,   18: ******************************
+           webget,   21: ************************************
+             remi,   22: *************************************
+            maiha,   22: *************************************
+         jcnetdev,   23: ***************************************
+         nakajima,   23: ***************************************
+            genki,   35: ************************************************************
+  Version Breakdown:
+            1.0.0,   82: ***********************
+            0.0.3,   96: ***************************
+            0.1.2,  118: *********************************
+            0.0.2,  183: ****************************************************
+            0.1.1,  186: *****************************************************
+            0.0.1,  196: ********************************************************
+            0.1.0,  209: ************************************************************
